@@ -15,6 +15,9 @@ const carousel = document.querySelector('.carousel');
 const carouselImage = document.querySelector('.carousel-image');
 const leftControl = document.querySelector('.left-control');
 const rightControl = document.querySelector('.right-control');
+const carouselButtonsContainer = document.querySelector(
+  '.carousel-buttons-container'
+);
 
 const images = [
   'images/nyc.png',
@@ -51,3 +54,11 @@ rightControl.addEventListener('click', () => {
   pos = pos % len;
   startSlideShow();
 });
+
+// carouselButtons
+for (let i = 0; i < len; i++) {
+  const button = document.createElement('div');
+  button.className = 'carousel-button';
+  button.textContent = i + 1;
+  carouselButtonsContainer.appendChild(button);
+}
