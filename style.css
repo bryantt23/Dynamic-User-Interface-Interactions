@@ -9,3 +9,7 @@
 .dropdown-content a {
   display: block;
 }
+
+.carousel-image {
+  height: 200px;
+}
