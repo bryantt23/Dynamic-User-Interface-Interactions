@@ -1,0 +1,11 @@
+.dropdown-content {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.dropdown-content a {
+  display: block;
+}
