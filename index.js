@@ -60,5 +60,11 @@ for (let i = 0; i < len; i++) {
   const button = document.createElement('div');
   button.className = 'carousel-button';
   button.textContent = i + 1;
+  button.addEventListener('click', () => {
+    clearInterval(interval);
+    carouselImage.src = images[i];
+    pos = (i + 1) % len;
+    startSlideShow();
+  });
   carouselButtonsContainer.appendChild(button);
 }
