@@ -26,17 +26,28 @@ const images = [
 
 let pos = 0;
 const len = images.length;
-let interval = setInterval(() => {
-  carouselImage.src = images[pos++];
-  pos = pos % len;
-}, 5000);
+let interval;
+carouselImage.src = images[pos];
+startSlideShow();
+
+function startSlideShow() {
+  clearInterval(interval);
+  interval = setInterval(() => {
+    carouselImage.src = images[pos++];
+    pos = pos % len;
+  }, 5000);
+}
 
 leftControl.addEventListener('click', () => {
+  clearInterval(interval);
   carouselImage.src = images[pos--];
-  pos = pos % len;
+  pos = (pos + len) % len;
+  startSlideShow();
 });
 
 rightControl.addEventListener('click', () => {
+  clearInterval(interval);
   carouselImage.src = images[pos++];
-  pos = pos + len;
+  pos = pos % len;
+  startSlideShow();
 });
