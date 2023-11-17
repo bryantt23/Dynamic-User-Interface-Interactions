@@ -43,15 +43,15 @@ function startSlideShow() {
 
 leftControl.addEventListener('click', () => {
   clearInterval(interval);
-  carouselImage.src = images[pos--];
-  pos = (pos + len) % len;
+  pos = (pos - 1 + len) % len;
+  carouselImage.src = images[pos];
   startSlideShow();
 });
 
 rightControl.addEventListener('click', () => {
   clearInterval(interval);
-  carouselImage.src = images[pos++];
-  pos = pos % len;
+  pos = (pos + 1) % len;
+  carouselImage.src = images[pos];
   startSlideShow();
 });
 
@@ -62,8 +62,8 @@ for (let i = 0; i < len; i++) {
   button.textContent = i + 1;
   button.addEventListener('click', () => {
     clearInterval(interval);
-    carouselImage.src = images[i];
-    pos = (i + 1) % len;
+    pos = i;
+    carouselImage.src = images[pos];
     startSlideShow();
   });
   carouselButtonsContainer.appendChild(button);
