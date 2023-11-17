@@ -10,6 +10,29 @@
   display: block;
 }
 
+.carousel {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  height: 200px;
+}
+
 .carousel-image {
   height: 200px;
+}
+
+.carousel-control {
+  display: flex;
+  font-size: 125px;
+  align-items: center;
+}
+
+.image-container {
+  display: flex;
+  border: 2px dotted;
+  justify-content: center;
+}
+
+.left-control {
+  justify-content: end;
+  text-align: right;
 }

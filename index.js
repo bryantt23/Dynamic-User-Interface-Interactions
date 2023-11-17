@@ -27,4 +27,4 @@ const len = images.length;
 let interval = setInterval(() => {
   carouselImage.src = images[pos++];
   pos = pos % len;
-}, 2000);
+}, 5000);
